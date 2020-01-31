@@ -46,9 +46,11 @@ export default {
     ...mapState(['wantMovies'])
   },
   mounted() {
+    console.log(12345)
+    console.log(process.env.VUE_APP_API_KEY)
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=5bc7264d96f74655a6be76925d076556&language=enUS&page=1"
+        "https://api.themoviedb.org/3/movie/popular?api_key=" + process.env.VUE_APP_API_KEY + "&language=enUS&page=1"
       )
       .then(response => {
         this.info = response;

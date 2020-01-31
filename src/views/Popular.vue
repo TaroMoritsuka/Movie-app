@@ -45,7 +45,7 @@ export default {
   mounted() {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=5bc7264d96f74655a6be76925d076556&language=en-US&page=1"
+        "https://api.themoviedb.org/3/movie/top_rated?api_key=" + process.env.VUE_APP_API_KEY + "&language=en-US&page=1"
       )
       .then(response => {
         this.info = response;
